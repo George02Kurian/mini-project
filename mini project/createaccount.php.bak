@@ -1,0 +1,68 @@
+<html>
+<head>
+<title>Registration Form</title>
+<link rel="stylesheet" type="text/css" href="stylecreateaccount.css">
+</head>
+
+<body>
+<h1>Registration Form</h1>
+<div class="register">
+
+<form method="POST" id="register" action="conncreateacc.php">
+
+<label>First Name :</label> 
+<input type="text" name="fname" id="name" placeholder="John" required><br><br>
+
+<label>Last Name :</label>
+<input type="text" name="lname" id="name" placeholder="Smith" required><br><br>
+
+<label>Email :</label>
+<input type="text" name="email" id="email" placeholder="john45@gmail.com" required><br><br>
+
+<label>Phone Number :</label>
+<select id="ph" name="ph" required>
+<option>+91</option>
+<option>+92</option>
+<option>+93</option>
+<option>+94</option>
+<option>+95</option>
+</select>
+<input type="text" name="phone" id="phone" placeholder="9495933490" required>
+
+<br><br><label>Date Of Birth :</label>
+<input type="date-local" name="dob" id="dob"  required><br><br>
+
+<input type="radio" name="male" id="male" value="male" required>
+<span id="male">&nbsp;Male</span>&nbsp;&nbsp;
+
+<input type="radio" name="male" id="male" value="female">
+<span id="male">&nbsp;Female</span>&nbsp;&nbsp;
+
+<input type="radio" name="male" id="male" value="other">
+<span id="male">&nbsp;Others</span>&nbsp;&nbsp;<br><br>
+
+<label>Place :</label>
+<input type="text" name="place" id="place" placeholder="Kottayam" required><br><br>
+
+<label>City :</label>
+<input type="text" name="city" id="city" placeholder="Kanjirapally" required><br><br>
+
+<label>Pincode :</label>
+<input type="text" name="pin" id="pin" placeholder="686507" required><br><br>
+
+<label>Username :</label>
+<input type="text" name="username" id="username" placeholder="Smith285" required><br><br>
+
+<label>Password :</label>
+<input type="password" name="pass" id="pass" required><br><br>
+
+<label>Re Enter Your Password :</label>
+<input type="password" name="repass" id="repass" required><br><br>
+
+<input type="submit" name="submit" id="submit" value="Register">
+</form>
+
+</div>
+</body>
+</html>
+

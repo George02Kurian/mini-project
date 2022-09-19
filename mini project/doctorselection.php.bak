@@ -1,0 +1,51 @@
+<html>
+<head>
+<title>Doctor Selection</title>
+<link rel="stylesheet" type="text/css" href="styledoctors.css">
+</head>
+<body>
+<div class="firstportion"> 
+<?php
+	for ($x = 1; $x <= 10; $x++)
+		{
+
+			$conn=mysqli_connect('localhost','root','','miniproject');
+			$sql="SELECT * FROM `doctor` WHERE `did` =$x ";
+			$query=mysqli_query($conn,$sql);
+			if(mysqli_num_rows($query)>0)
+			{
+				while($row=mysqli_fetch_assoc($query))
+				{
+					echo "<h1 style=\"margin-left:40%\";>".$row['dname']."</h1>";
+					echo "<p style=\"margin-left:55%; margin-top:20px; font-size:24px;\">" .$row['Ddescription']."</p>";
+					echo "<img src=".$row['Dphoto']." style=\"width:50%; height:70%; margin-top:0px\"/>";
+					echo "<form method=\"POST\" action=\"booking.php\">";
+					echo "<input type=\"submit\" value=\"Book Now\" style=\"  padding: 1.3em 3em;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: #fff;
+  background-color: #993399;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+  margin-top: -100;
+  margin-left: 60%;\" name=\"submit\" id=\"submit\"/>";
+					
+					echo "</form>";
+				}
+			}
+		}	
+?>
+		
+
+
+</div>
+
+
+</body>
+</html>

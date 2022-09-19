@@ -1,0 +1,218 @@
+*
+{
+	padding: 0;
+	margin: 0; 
+	box-sizing: border-box;
+}
+body
+{
+		font-family: sans-serif;
+}
+.logo
+{
+    float: left;
+	position: absolute;
+    width: 95px;
+    height: 80px;
+    left: 35px;
+    top: 32px;
+}
+.menu-bar
+{
+	background: #993399;
+    text-align: center;
+}
+.menu-bar ul
+{
+	display: inline-flex;
+	list-style: none;
+	color: #fff;
+}
+.menu-bar ul li
+{
+	width: 175px;
+	margin: 15px;
+	padding: 15px;
+}
+.menu-bar ul li a
+{
+	text-decoration: none;
+	color: #fff;
+}
+active, .menu-bar ul li:hover
+{
+	background: #ecc6ec;
+	border-radius: 3px;
+}
+.menu-bar .fa
+{
+	margin-right: 8px;
+}
+.sub-menu-1
+{
+    display: none;
+}
+.menu-bar ul li:hover .sub-menu-1
+{
+	display: block;
+	position: absolute;
+	background: #993399;
+	margin-top: 15px;
+	margin-left: -15px;
+}
+.menu-bar ul li:hover .sub-menu-1 ul
+{
+	display: block;
+	margin: 10px;
+}
+.menu-bar ul li:hover .sub-menu-1 ul li
+{
+	width: 300px;
+	padding: 10px;
+	border-bottom: 1px dotted #fff;
+	background: transparent;
+	border-radius: 0;
+	text-align: left;
+}
+.menu-bar ul li:hover .sub-menu-1 ul li:last-child
+{
+	border-bottom:none;
+}
+.menu-bar ul li:hover .sub-menu-1 ul li a:hover
+{
+	color: #000000;	
+}
+.menu-bar ul li:hover .sub-menu-1 ul li:hover
+{
+	color: #000000;
+}
+button
+{
+  padding: 1.3em 3em;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: #fff;
+  background-color: #993399;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+  margin-top: 350;
+  margin-left: 600;
+}
+
+button:hover
+{
+  background-color: #ecc6ec;
+  box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+  color: #000;
+  transform: translateY(-7px);
+}
+
+button:active
+{
+  transform: translateY(-1px);
+}
+.upperportion
+{
+	background-image: url(homepagephoto.jpg);
+	background-size: cover;
+	background-position: center;
+	height: 720px;
+    width: 100%;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    overflow-x: hidden;
+    padding-top: 20px;
+
+}
+.middleportion
+{
+	background-image: url(violet.jpg);
+	/*height: 650px;*/
+    width: 100%;
+    position: absolute;
+    z-index: 1;
+    top: 740px;            
+    overflow-x: hidden;
+    padding-top: 20px;                                            
+
+}
+.middleportion h1
+{
+	margin-left: 45%;
+	text-decoration: underline;
+	text-decoration-color: white;
+	color: #000;
+	font-size: 45px;
+}
+.middleportion h2
+{
+	margin-left: 50px;
+	color: #000;
+	font-size: 40px;
+}
+.middleportion p
+{
+	margin-left: 50px;
+	margin-right: 10px;
+	color: #000;
+	margin-bottom: 20px;
+	margin-top: 20px;
+	font-size: 25px;
+} 
+.lowerportion
+{
+	background-image: url(violet.jpg);
+    width: 100%;
+/*	height: 100vh;                    */
+    position: absolute; 
+    z-index: 1;
+    top: 1480px;                
+    overflow-x: hidden;
+    padding-top: 20px;
+	
+	                         
+}
+.lowerportion h1
+{
+	/*margin-top: 0px;                               */
+	margin-left: 45%;
+	text-decoration: underline;
+	text-decoration-color: white;
+	color: #000;
+	font-size: 45px;
+}
+.swiper
+{
+	display: flex;
+	align-items: center;
+	justify-content: center;  
+	width: 80%;
+	height: fit-content;
+}
+.swiper-slide img
+{
+	width: 100%;
+	
+}
+.swiper .swiper-button-prev, .swiper .swiper-button-next
+{
+	color: #fff;
+}
+.swiper .swiper-pagination-bullet-active
+{
+	background: #fff;
+}
+
+	 
+
+	
+
+	
+

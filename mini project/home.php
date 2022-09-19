@@ -1,0 +1,162 @@
+
+<html>
+<head>
+<title>homepage</title>
+
+<link rel="stylesheet" href="style1.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+
+</head>
+
+<body>
+<div class="upperportion">
+<div class="logo">
+<img src="dental logo.jpg" alt="dental clinic logo" height="50" width="100">
+
+</div>
+<div class="menu-bar">
+<ul>
+<li class="active"><a href="#"><i class="fa fa-home"></i>&nbsp HOME</a></li>
+<li><a href="#about"><i class="fa fa-address-book"></i>&nbsp ABOUT</a></li>
+<li><a href="#"><i class="fa fa-medkit"></i>&nbsp SERVICES</a>&nbsp &nbsp;<i class="fa fa-sort-desc" aria-hidden="true"></i>
+	<div class="sub-menu-1">
+		<ul>
+			<li><a href="#">Fillings, root canals, and extractions</a></li>
+			<li><a href="#">Cosmetic dentistry, such as whitening, porcelain and composite veneers</a></li>
+			<li><a href="#">Implants - placement and restoration</a></li>
+			<li><a href="#">Crowns, bridges, full and partial dentures</a></li>
+			<li><a href="#">Implants</a></li>
+			<li><a href="#">Orthodontics</a></li>
+			<li><a href="#">Preventive care, periodontal therapy, and nutritional counseling</a></li>
+			<li><a href="#">Relaxation techniques using nitrous oxide sedation</a></li>
+		</ul>
+	</div>
+</li>
+<li><a href="#gallery"><i class="fa fa-camera"></i>&nbsp GALLERY</a></li>
+<li><a href="map.php"<i class="fa fa-map-marker"></i>&nbsp LOCATION</a></li>
+
+
+<li><i class="fa fa-phone"></i>&nbsp CONTACT&nbsp &nbsp;<i class="fa fa-sort-desc" aria-hidden="true"></i>
+	<div class="sub-menu-1">
+		<ul>
+			<?php
+			$conn=mysqli_connect('localhost','root','','miniproject');
+			$sql="SELECT * FROM `doctor`";
+			$query=mysqli_query($conn,$sql);
+			if(mysqli_num_rows($query)>0)
+			{
+				while($row=mysqli_fetch_assoc($query))
+				{
+					echo "<li>".$row['dname']." ".$row['dcontact']."</li>";
+				}
+				
+			}
+			
+			?>
+			
+</ul>
+</div>
+</div>
+
+<form method="POST" action="doctorselection.php">
+<button>Book An Appointment</button>
+</form>
+</div>
+<div id=about class="middleportion">
+<h1>ABOUT US</h1>
+<?php
+			$conn=mysqli_connect('localhost','root','','miniproject');
+			$sql="SELECT * FROM `about` WHERE `about_id` IN('1','2','3')";
+			$query=mysqli_query($conn,$sql);
+			if(mysqli_num_rows($query)>0)
+			{
+				while($row=mysqli_fetch_assoc($query))
+				{
+					echo "<p>".$row['para']."</p>";
+				}
+				
+			}
+			
+			?>
+
+
+
+<h2>What we do</h2>
+<?php
+			$conn=mysqli_connect('localhost','root','','miniproject');
+			$sql="SELECT * FROM `about` WHERE `about_id` IN('4','5','6')";
+			$query=mysqli_query($conn,$sql);
+			if(mysqli_num_rows($query)>0)
+			{
+				while($row=mysqli_fetch_assoc($query))
+				{
+					echo "<p>".$row['para']."</p>";
+				}
+				
+			}
+			
+			?>
+
+</div>
+<div id=gallery class="lowerportion">
+<h1>GALLERY</h1>
+<div class="swiper">
+<div class="swiper-wrapper">
+<?php
+			$conn=mysqli_connect('localhost','root','','miniproject');
+			$sql="SELECT * FROM `photos`";
+			$query=mysqli_query($conn,$sql);
+			if(mysqli_num_rows($query)>0)
+			{
+				while($rows=mysqli_fetch_assoc($query))
+				{
+					echo"<div class=\"swiper-slide\"><img src=".$rows['pname']."></div>";
+				}
+				
+			}
+			
+?>
+<!--<div class="swiper-slide"><img src="gallery2.jpg" alt="img2"></div>
+<div class="swiper-slide"><img src="gallery3.jpg" alt="img3"></div>
+<div class="swiper-slide"><img src="gallery4.jpg" alt="img4"></div>
+<div class="swiper-slide"><img src="gallery5.jpg" alt="img5"></div>  -->
+</div>
+<div class="swiper-pagination"></div>
+<div class="swiper-button-prev"></div>
+<div class="swiper-button-next"></div>
+
+
+
+
+</div>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+<script>
+const swiper = new Swiper('.swiper', {
+	autoplay: {
+		delay: 3000,
+		disableOnInteraction: false,
+	},
+  loop: true,
+
+ 
+  pagination: {
+    el: '.swiper-pagination',
+	clickable: true
+  },
+
+
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+
+});
+</script>
+</body>
+</html>
+}
+
